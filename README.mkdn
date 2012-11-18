@@ -1,4 +1,4 @@
-Android Developer Alliance: AffinitySERIES ROM
+Android Developer Alliance: AffinitySERIES ROM 
 ===========
 To get started with AffinitySERIES ROM, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).

@@ -6,7 +6,7 @@
 		   
   <remote  name="afs"
            fetch="git://github.com/AffinitySERIES/"
-           review="review.androiddeveloperalliance.org" />
+           />
 
   <remote  name="omapzoom"
            fetch="git://git.omapzoom.org/" />

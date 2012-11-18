@@ -136,7 +136,7 @@ Before you continue --> run this in the terminal
 
 	git config --global review.review.androiddeveloperalliance.org.username <gerrit username>
 
-    repo init -u git://github.com/AffinitySERIES/manifest.git -b jb
+    repo init -u git://github.com/AffinitySERIES/manifest.git -b jbmr1
 
     repo sync
 

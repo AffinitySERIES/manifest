@@ -4,48 +4,65 @@
   <remote  name="aosp"
            fetch="https://android.googlesource.com/"/>
 		   
-  <remote  name="github"
-           fetch="git://github.com/AndroidDeveloperAlliance/"
+  <remote  name="afs"
+           fetch="git://github.com/AffinitySERIES/"
            review="review.androiddeveloperalliance.org" />
 
   <remote  name="omapzoom"
            fetch="git://git.omapzoom.org/" />
 		   
-  <default revision="refs/tags/android-4.1.1_r6"
+  <default revision="refs/tags/android-4.2_r1"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform_build" remote="github" revision="jb" >
+  <project path="build" name="platform_build" remote="afs" revision="jbmr1" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="android" name="manifest" remote="github" revision="jb" />
+  <project path="android" name="manifest" remote="afs" revision="jbmr1" />
   <project path="abi/cpp" name="platform/abi/cpp" />
-  <project path="bionic" name="platform_bionic" remote="github" revision="jb" />
+  <project path="bionic" name="platform_bionic" remote="afs" revision="jbmr1" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
   <project path="bootable/recovery" name="platform/bootable/recovery" />
-  <project path="dalvik" name="platform_dalvik" remote="github" revision="jb" />
-  <project path="development" name="platform_development" remote="github" revision="jb" />
-  <project path="device/asus/grouper" name="device_asus_grouper" remote="github" revision="jb" />
-  <project path="device/asus/tf101" name="device_asus_tf101" remote="github" revision="jb" />
-  <project path="device/asus/tf700t" name="device_asus_tf700t" remote="github" revision="jb" />
+  <project path="dalvik" name="platform_dalvik" remote="afs" revision="jbmr1" />
+  <project path="development" name="platform_development" remote="afs" revision="jbmr1" />
+  <project path="device/asus/grouper" name="device_asus_grouper" remote="afs" revision="jbmr1" />
+  
+  <!--Disabling as it is not needed at the moment
+  <project path="device/asus/tf101" name="device_asus_tf101" remote="afs" revision="jbmr1" />
+  <project path="device/asus/tf700t" name="device_asus_tf700t" remote="afs" revision="jbmr1" />
+  -->
+  
   <project path="device/common" name="device/common" />
-  <project path="device/generic/goldfish" name="device_generic_goldfish" remote="github" revision="jb" />
+  
+  <!--Disabling at it is not needed at the moment  
+  <project path="device/generic/goldfish" name="device_generic_goldfish" remote="afs" revision="jbmr1" />
+  -->
+  
   <project path="device/sample" name="device/sample" />
-  <project path="device/samsung/d710" name="device_samsung_d710" remote="github" revision="jb" />
-  <project path="device/samsung/d2vzw" name="device_samsung_d2vzw" remote="github" revision="jb" />
-  <project path="device/samsung/d2-common" name="device_samsung_d2-common" remote="github" revision="jb" />
-  <project path="device/samsung/msm8960-common" name="device_samsung_msm8960-common" remote="github" revision="jb" />
-  <project path="device/samsung/i9100" name="device_samsung_i9100" remote="github" revision="jb" />
-  <project path="device/samsung/maguro" name="device_samsung_maguro" remote="github" revision="jb" />
-  <project path="device/samsung/toro" name="device_samsung_toro" remote="github" revision="jb" />
-  <project path="device/samsung/toroplus" name="device_samsung_toroplus" remote="github" revision="jb" />
-  <project path="device/samsung/tuna" name="device_samsung_tuna" remote="github" revision="jb" />
-  <project path="device/samsung/n7000" name="device_samsung_n7000" remote="github" revision="jb" />
-  <project path="device/motorola/spyder" name="device_motorola_spyder" remote="github" revision="jb" />
-  <project path="device/samsung/galaxys2-common" name="device_samsung_galaxys2-common" remote="github" revision="jb" />
+  
+  <!--Disabling as they are not needed at the moment 
+  <project path="device/samsung/d710" name="device_samsung_d710" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/d2vzw" name="device_samsung_d2vzw" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/d2-common" name="device_samsung_d2-common" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/msm8960-common" name="device_samsung_msm8960-common" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/i9100" name="device_samsung_i9100" remote="afs" revision="jbmr1" />
+  -->
+  
+  <project path="device/samsung/maguro" name="device_samsung_maguro" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/toro" name="device_samsung_toro" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/toroplus" name="device_samsung_toroplus" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/tuna" name="device_samsung_tuna" remote="afs" revision="jbmr1" />
+  
+  <!-- Disabling as not needed at the moment 
+  <project path="device/samsung/n7000" name="device_samsung_n7000" remote="afs" revision="jbmr1" />
+  <project path="device/motorola/spyder" name="device_motorola_spyder" remote="afs" revision="jbmr1" />
+  <project path="device/samsung/galaxys2-common" name="device_samsung_galaxys2-common" remote="afs" revision="jbmr1" />
+  -->
+  
   <project path="device/ti/proprietary-open" name="device/ti/proprietary-open" remote="omapzoom" revision="jb-release" />
   <project path="device/ti/common-open" name="device/ti/common-open" remote="omapzoom" revision="jb-release" />
+  
   <project path="external/bltsville" name="platform/external/bltsville" remote="omapzoom" revision="master"/>
   <project path="external/crda" name="platform/external/crda" remote="omapzoom" revision="p-ics-mr0" />
   <project path="external/wpa_supplicant_8_ti" name="platform/external/wpa_supplicant_8_ti" remote="omapzoom" revision="jb-release" />
@@ -58,18 +75,18 @@
   <project path="external/apache-http" name="platform/external/apache-http" />
   <project path="external/apache-xml" name="platform/external/apache-xml" />
   <project path="external/astl" name="platform/external/astl" />
-  <project path="external/bash" name="platform_external_bash" remote="github" revision="jb" />
+  <project path="external/bash" name="platform_external_bash" remote="afs" revision="jbmr1" />
   <project path="external/bison" name="platform/external/bison" />
   <project path="external/blktrace" name="platform/external/blktrace" />
-  <project path="external/bluetooth/bluez" name="platform_external_bluetooth_bluez" remote="github" revision="jb" />
-  <project path="external/bluetooth/glib" name="platform_external_bluetooth_glib" remote="github" revision="jb" />
+  <project path="external/bluetooth/bluez" name="platform_external_bluetooth_bluez" remote="afs" revision="jbmr1" />
+  <project path="external/bluetooth/glib" name="platform_external_bluetooth_glib" remote="afs" revision="jbmr1" />
   <project path="external/bluetooth/hcidump" name="platform/external/bluetooth/hcidump" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" />
   <project path="external/bsdiff" name="platform/external/bsdiff" />
-  <project path="external/busybox" name="platform_external_busybox" remote="github" revision="jb" />
+  <project path="external/busybox" name="platform_external_busybox" remote="afs" revision="jbmr1" />
   <project path="external/bzip2" name="platform/external/bzip2" />
   <project path="external/checkpolicy" name="platform/external/checkpolicy" />
-  <project path="external/chromium" name="platform_external_chromium" remote="github" revision="jb" />
+  <project path="external/chromium" name="platform_external_chromium" remote="afs" revision="jbmr1" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" />
   <project path="external/cibu-fonts" name="platform/external/cibu-fonts" />
   <project path="external/clang" name="platform/external/clang" />
@@ -77,15 +94,15 @@
   <project path="external/dbus" name="platform/external/dbus" />
   <project path="external/dexmaker" name="platform/external/dexmaker" />
   <project path="external/dhcpcd" name="platform/external/dhcpcd" />
-  <project path="external/dnsmasq" name="platform_external_dnsmasq" remote="github" revision="jb" />
+  <project path="external/dnsmasq" name="platform_external_dnsmasq" remote="afs" revision="jbmr1" />
   <project path="external/doclava" name="platform/external/doclava" />
   <project path="external/dropbear" name="platform/external/dropbear" />
-  <project path="external/e2fsprogs" name="platform_external_e2fsprogs" remote="github" revision="jb" />
+  <project path="external/e2fsprogs" name="platform_external_e2fsprogs" remote="afs" revision="jbmr1" />
   <project path="external/easymock" name="platform/external/easymock" />
   <project path="external/eclipse-basebuilder" name="platform/external/eclipse-basebuilder" />
   <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
   <project path="external/elfutils" name="platform/external/elfutils" />
-  <project path="external/embunit" name="platform_external_embunit" remote="github" revision="jb" />
+  <project path="external/embunit" name="platform_external_embunit" remote="afs" revision="jbmr1" />
   <project path="external/emma" name="platform/external/emma" />
   <project path="external/esd" name="platform/external/esd" />
   <project path="external/expat" name="platform/external/expat" />
@@ -115,7 +132,7 @@
   <project path="external/jhead" name="platform/external/jhead" />
   <project path="external/jmdns" name="platform/external/jmdns" />
   <project path="external/jmonkeyengine" name="platform/external/jmonkeyengine" />
-  <project path="external/jpeg" name="platform_external_jpeg" remote="github" revision="jb" />
+  <project path="external/jpeg" name="platform_external_jpeg" remote="afs" revision="jbmr1" />
   <project path="external/jsilver" name="platform/external/jsilver" />
   <project path="external/jsr305" name="platform/external/jsr305" />
   <project path="external/junit" name="platform/external/junit" />
@@ -124,12 +141,12 @@
   <project path="external/libgsm" name="platform/external/libgsm" />
   <project path="external/liblzf" name="platform/external/liblzf" />
   <project path="external/libmtp" name="platform/external/libmtp" />
-  <project path="external/libncurses" name="platform_external_libncurses" remote="github" revision="jb" />
+  <project path="external/libncurses" name="platform_external_libncurses" remote="afs" revision="jbmr1" />
   <project path="external/libnfc-nxp" name="platform/external/libnfc-nxp" />
   <project path="external/libnl-headers" name="platform/external/libnl-headers" />
   <project path="external/libpcap" name="platform/external/libpcap" />
   <project path="external/libphonenumber" name="platform/external/libphonenumber" />
-  <project path="external/libpng" name="platform_external_libpng" remote="github" revision="jb" />
+  <project path="external/libpng" name="platform_external_libpng" remote="afs" revision="jbmr1" />
   <project path="external/libselinux" name="platform/external/libselinux" />
   <project path="external/libsepol" name="platform/external/libsepol" />
   <project path="external/libusb" name="platform/external/libusb" />
@@ -157,60 +174,63 @@
   <project path="external/opencv" name="platform/external/opencv" />
   <project path="external/openfst" name="platform/external/openfst" />
   <project path="external/openssh" name="platform/external/openssh" />
-  <project path="external/openssl" name="platform_external_openssl" remote="github" revision="jb" />
+  <project path="external/openssl" name="platform_external_openssl" remote="afs" revision="jbmr1" />
   <project path="external/oprofile" name="platform/external/oprofile" />
-  <project path="external/ping" name="platform_external_ping" remote="github" revision="jb" />
+  <project path="external/ping" name="platform_external_ping" remote="afs" revision="jbmr1" />
   <project path="external/ping6" name="platform/external/ping6" />
   <project path="external/ppp" name="platform/external/ppp" />
   <project path="external/proguard" name="platform/external/proguard" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform_external_qemu" remote="github" revision="jb" />
+  <project path="external/qemu" name="platform_external_qemu" remote="afs" revision="jbmr1" />
   <project path="external/qemu-pc-bios" name="platform/external/qemu-pc-bios" />
   <project path="external/quake" name="platform/external/quake" />
   <project path="external/regex-re2" name="platform/external/regex-re2" />
   <project path="external/replicaisland" name="platform/external/replicaisland" />
   <project path="external/safe-iop" name="platform/external/safe-iop" />
   <project path="external/sepolicy" name="platform/external/sepolicy" />
-  <project path="external/skia" name="platform_external_skia" remote="github" revision="jb" />
+  <project path="external/skia" name="platform_external_skia" remote="afs" revision="jbmr1" />
   <project path="external/smali" name="platform/external/smali" />
-  <project path="external/sonivox" name="platform_external_sonivox" remote="github" revision="jb" />
+  <project path="external/sonivox" name="platform_external_sonivox" remote="afs" revision="jbmr1" />
   <project path="external/speex" name="platform/external/speex" />
-  <project path="external/sqlite" name="platform_external_sqlite" remote="github" revision="jb" />
-  <project path="external/srec" name="platform_external_srec" remote="github" revision="jb" />
+  <project path="external/sqlite" name="platform_external_sqlite" remote="afs" revision="jbmr1" />
+  <project path="external/srec" name="platform_external_srec" remote="afs" revision="jbmr1" />
   <project path="external/srtp" name="platform/external/srtp" />
-  <project path="external/stlport" name="platform_external_stlport" remote="github" revision="jb" />
+  <project path="external/stlport" name="platform_external_stlport" remote="afs" revision="jbmr1" />
   <project path="external/strace" name="platform/external/strace" />
   <project path="external/stressapptest" name="platform/external/stressapptest" />
   <project path="external/svox" name="platform/external/svox" />
   <project path="external/tagsoup" name="platform/external/tagsoup" />
-  <project path="external/tcpdump" name="platform_external_tcpdump" remote="github" revision="jb" />
+  <project path="external/tcpdump" name="platform_external_tcpdump" remote="afs" revision="jbmr1" />
   <project path="external/tinyalsa" name="platform/external/tinyalsa" />
   <project path="external/tinyxml" name="platform/external/tinyxml" />
-  <project path="external/tremolo" name="platform_external_tremolo" remote="github" revision="jb" />
-  <project path="external/v8" name="platform_external_v8" remote="github" revision="jb" />
+  <project path="external/tremolo" name="platform_external_tremolo" remote="afs" revision="jbmr1" />
+  <project path="external/v8" name="platform_external_v8" remote="afs" revision="jbmr1" />
   <project path="external/valgrind" name="platform/external/valgrind" />
-  <project path="external/webkit" name="platform_external_webkit" remote="github" revision="jb" />
+  <project path="external/webkit" name="platform_external_webkit" remote="afs" revision="jbmr1" />
   <project path="external/webp" name="platform/external/webp" />
   <project path="external/webrtc" name="platform/external/webrtc" />
-  <project path="external/wpa_supplicant_6" name="platform_external_wpa_supplicant_6" remote="github" revision="jb" />
-  <project path="external/wpa_supplicant_8" name="platform_external_wpa_supplicant_8" remote="github" revision="jb" />
+  <project path="external/wpa_supplicant_6" name="platform_external_wpa_supplicant_6" remote="afs" revision="jbmr1" />
+  <project path="external/wpa_supplicant_8" name="platform_external_wpa_supplicant_8" remote="afs" revision="jbmr1" />
   <project path="external/xmlwriter" name="platform/external/xmlwriter" />
   <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project path="external/zlib" name="platform_external_zlib" remote="github" revision="jb" />
+  <project path="external/zlib" name="platform_external_zlib" remote="afs" revision="jbmr1" />
   <project path="external/zxing" name="platform/external/zxing" />
-  <project path="kernel/samsung/d2" name="kernel_samsung_d2" remote="github" revision="jb" />
-  <project path="kernel/samsung/smdk4210" name="kernel_samsung_smdk4210" remote="github" revision="jb"/>
-  <project path="kernel/motorola/mapphone" name="kernel_mapphone_kexec" remote="github" revision="jb" />
-  <project path="frameworks/av" name="platform_frameworks_av" remote="github" revision="jb"/>
-  <project path="frameworks/base" name="platform_frameworks_base" remote="github" revision="jb" />
+  
+  <!-- Disabling at it's not needed at the moment
+  <project path="kernel/samsung/d2" name="kernel_samsung_d2" remote="afs" revision="jbmr1" />
+  <project path="kernel/samsung/smdk4210" name="kernel_samsung_smdk4210" remote="afs" revision="jbmr1"/>
+  -->
+  
+  <project path="frameworks/av" name="platform_frameworks_av" remote="afs" revision="jbmr1"/>
+  <project path="frameworks/base" name="platform_frameworks_base" remote="afs" revision="jbmr1" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" />
-  <project path="frameworks/compile/slang" name="platform_frameworks_compile_slang" remote="github" revision="jb" />
-  <project path="frameworks/ex" name="platform_frameworks_ex" remote="github" revision="jb" />
+  <project path="frameworks/compile/slang" name="platform_frameworks_compile_slang" remote="afs" revision="jbmr1" />
+  <project path="frameworks/ex" name="platform_frameworks_ex" remote="afs" revision="jbmr1" />
   <project path="frameworks/mff" name="platform/frameworks/mff" />
   <project path="frameworks/ml" name="platform/frameworks/ml" />
-  <project path="frameworks/native" name="platform_frameworks_native" remote="github" revision="jb" />
+  <project path="frameworks/native" name="platform_frameworks_native" remote="afs" revision="jbmr1" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" />
   <project path="frameworks/opt/emoji" name="platform/frameworks/opt/emoji" />
   <project path="frameworks/opt/inputmethodcommon" name="platform/frameworks/opt/inputmethodcommon" />
@@ -223,61 +243,72 @@
   <project path="gdk" name="platform/gdk" />
   <project path="hardware/broadcom/wlan" name="platform/hardware/broadcom/wlan" />
   <project path="hardware/invensense" name="platform/hardware/invensense" />
-  <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="github" revision="jb" />
-  <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" remote="github" revision="jb" />
-  <project path="hardware/qcom/audio" name="platform_hardware_qcom_audio" remote="github" revision="jb" />
-  <project path="hardware/qcom/display" name="platform_hardware_qcom_display" remote="github" revision="jb" />
-  <project path="hardware/qcom/gps" name="platform_hardware_qcom_gps" remote="github" revision="jb" />
-  <project path="hardware/qcom/media" name="platform_hardware_qcom_media" remote="github" revision="jb" />
-  <project path="hardware/ril" name="platform_hardware_ril" remote="github" revision="jb" />
-  <project path="hardware/samsung" name="platform_hardware_samsung" remote="github" revision="jb" />
+  <project path="hardware/libhardware" name="platform_hardware_libhardware" remote="afs" revision="jbmr1" />
+  <project path="hardware/libhardware_legacy" name="platform_hardware_libhardware_legacy" remote="afs" revision="jbmr1" />
+  
+  <!-- Disabling Repo since we don't need at it at the moment -->
+  <!--
+  <project path="hardware/qcom/audio" name="platform_hardware_qcom_audio" remote="afs" revision="jbmr1" />
+  <project path="hardware/qcom/display" name="platform_hardware_qcom_display" remote="afs" revision="jbmr1" />
+  <project path="hardware/qcom/gps" name="platform_hardware_qcom_gps" remote="afs" revision="jbmr1" />
+  <project path="hardware/qcom/media" name="platform_hardware_qcom_media" remote="afs" revision="jbmr1" />
+  -->
+  
+  <project path="hardware/ril" name="platform_hardware_ril" remote="afs" revision="jbmr1" />
+  
+  <!-- Disabling Repo since we don't need at it at the moment
+  <project path="hardware/samsung" name="platform_hardware_samsung" remote="afs" revision="jbmr1" />
+  -->
+  
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" />
   <project path="hardware/ti/omap4xxx" name="platform/hardware/ti/omap4xxx" />
-  <project path="hardware/ti/wlan" name="platform_hardware_ti_wlan" remote="github" revision="jb" />
+  <project path="hardware/ti/wlan" name="platform_hardware_ti_wlan" remote="afs" revision="jbmr1" />
   <project path="hardware/ti/wpan" name="platform/hardware/ti/wpan" />
   <project path="libcore" name="platform/libcore" />
   <project path="libnativehelper" name="platform/libnativehelper" />
   <project path="ndk" name="platform/ndk" />
   <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
-  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" remote="github" revision="jb" />
-  <project path="packages/apps/Browser" name="platform_packages_apps_Browser" remote="github" revision="jb" />
+  <project path="packages/apps/Bluetooth" name="platform_packages_apps_Bluetooth" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/Browser" name="platform_packages_apps_Browser" remote="afs" revision="jbmr1" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
   <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" />
-  <project path="packages/apps/Camera" name="platform_packages_apps_Camera" remote="github" revision="jb" />
+  <project path="packages/apps/Camera" name="platform_packages_apps_Camera" remote="afs" revision="jbmr1" />
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
-  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" remote="github" revision="jb" />
-  <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" remote="github" revision="jb" />
-  <project path="packages/apps/Email" name="platform_packages_apps_Email" remote="github" revision="jb" />
+  <project path="packages/apps/Contacts" name="platform_packages_apps_Contacts" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/Email" name="platform_packages_apps_Email" remote="afs" revision="jbmr1" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
-  <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" remote="github" revision="jb" />
+  <project path="packages/apps/Gallery2" name="platform_packages_apps_Gallery2" remote="afs" revision="jbmr1" />
   <project path="packages/apps/KeyChain" name="platform/packages/apps/KeyChain" />
-  <project path="packages/apps/Launcher2" name="platform_packages_apps_Launcher2" remote="github" revision="jb" />
-  <project path="packages/apps/Mms" name="platform_packages_apps_Mms" remote="github" revision="jb" />
-  <project path="packages/apps/Music" name="platform_packages_apps_Music" remote="github" revision="jb" />
+  <project path="packages/apps/Launcher2" name="platform_packages_apps_Launcher2" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/Mms" name="platform_packages_apps_Mms" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/Music" name="platform_packages_apps_Music" remote="afs" revision="jbmr1" />
   <project path="packages/apps/MusicFX" name="platform/packages/apps/MusicFX" />
   <project path="packages/apps/Nfc" name="platform/packages/apps/Nfc" />
   <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="platform_packages_apps_Phone" remote="github" revision="jb" />
-  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="github" revision="jb" />
+  <project path="packages/apps/Phone" name="platform_packages_apps_Phone" remote="afs" revision="jbmr1" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_Settings" remote="afs" revision="jbmr1" />
   <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
   <project path="packages/apps/Tag" name="platform/packages/apps/Tag" />
-  <project path="packages/apps/Torch" name="platform_packages_apps_Torch" remote="github" revision="jb" />
+  <project path="packages/apps/Torch" name="platform_packages_apps_Torch" remote="afs" revision="jbmr1" />
   <project path="packages/experimental" name="platform/packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="platform_packages_input_LatinIME" remote="github" revision="jb" />
+  <project path="packages/inputmethods/LatinIME" name="platform_packages_input_LatinIME" remote="afs" revision="jbmr1" />
   <project path="packages/providers/ApplicationsProvider" name="platform/packages/providers/ApplicationsProvider" />
   <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" />
-  <project path="packages/providers/ContactsProvider" name="platform_packages_providers_ContactsProvider" remote="github" revision="jb" />
-  <project path="packages/providers/DownloadProvider" name="platform_packages_providers_DownloadProvider" remote="github" revision="jb" />
+  <project path="packages/providers/ContactsProvider" name="platform_packages_providers_ContactsProvider" remote="afs" revision="jbmr1" />
+  <project path="packages/providers/DownloadProvider" name="platform_packages_providers_DownloadProvider" remote="afs" revision="jbmr1" />
   <project path="packages/providers/DrmProvider" name="platform/packages/providers/DrmProvider" />
-  <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" remote="github" revision="jb" />
+  <project path="packages/providers/MediaProvider" name="platform_packages_providers_MediaProvider" remote="afs" revision="jbmr1" />
   <project path="packages/providers/PartnerBookmarksProvider" name="platform/packages/providers/PartnerBookmarksProvider" />
-  <project path="packages/providers/TelephonyProvider" name="platform_packages_providers_TelephonyProvider" remote="github" revision="jb" />
+  <project path="packages/providers/TelephonyProvider" name="platform_packages_providers_TelephonyProvider" remote="afs" revision="jbmr1" />
   <project path="packages/providers/UserDictionaryProvider" name="platform/packages/providers/UserDictionaryProvider" />
   <project path="packages/wallpapers/Basic" name="platform/packages/wallpapers/Basic" />
   <project path="packages/wallpapers/LivePicker" name="platform/packages/wallpapers/LivePicker" />
-  <project path="packages/wallpapers/ADAPapers" name="platform_packages_apps_ADAPapers" remote="github" revision="jb" />
+  <!-- Disabling as it's not needed at the moment
+  <project path="packages/wallpapers/ADAPapers" name="platform_packages_apps_ADAPapers" remote="afs" revision="jbmr1" />
+  -->
   <project path="pdk" name="platform/pdk" />
   <project path="prebuilt" name="platform/prebuilt" />
   <project path="prebuilts/eclipse" name="platform/prebuilts/eclipse" />
@@ -302,20 +333,23 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" />
   <project path="sdk" name="platform/sdk"  />
-  <project path="system/bluetooth" name="platform_system_bluetooth" remote="github" revision="jb" />
-  <project path="system/core" name="platform_system_core" remote="github" revision="jb" />
-  <project path="system/extras" name="platform_system_extras" remote="github" revision="jb" />
-  <project path="system/media" name="platform_system_media" remote="github" revision="jb" />
-  <project path="system/netd" name="platform_system_netd" remote="github" revision="jb" />
+  <project path="system/bluetooth" name="platform_system_bluetooth" remote="afs" revision="jbmr1" />
+  <project path="system/core" name="platform_system_core" remote="afs" revision="jbmr1" />
+  <project path="system/extras" name="platform_system_extras" remote="afs" revision="jbmr1" />
+  <project path="system/media" name="platform_system_media" remote="afs" revision="jbmr1" />
+  <project path="system/netd" name="platform_system_netd" remote="afs" revision="jbmr1" />
   <project path="system/security" name="platform/system/security" />
-  <project path="system/vold" name="platform_system_vold" remote="github" revision="jb" />
-  <project path="vendor/asus" name="vendor_asus" remote="github" revision="jb" />
-  <project path="vendor/ada" name="vendor_ada" remote="github" revision="jb" />
-  <project path="vendor/samsung" name="proprietary_vendor_samsung" remote="github" revision="jb" />
-  <project path="vendor/qcom/proprietary" name="vendor_qcom" remote="github" revision="jb" />
+  <project path="system/vold" name="platform_system_vold" remote="afs" revision="jbmr1" />
+  <project path="vendor/asus" name="vendor_asus" remote="afs" revision="jbmr1" />
+  <project path="vendor/ada" name="vendor_ada" remote="afs" revision="jbmr1" />
+  <project path="vendor/samsung" name="proprietary_vendor_samsung" remote="afs" revision="jbmr1" />
+  
+  <!--Disabling since we are not using at the moment 
+  <project path="vendor/qcom/proprietary" name="vendor_qcom" remote="afs" revision="jbmr1" />
+  -->
 
-  <project path="vendor/tmobile/apps/ThemeChooser" name="themes-platform-vendor-tmobile-apps-ThemeChooser" remote="github" revision="jellybean" />
-  <project path="vendor/tmobile/libs/com.tmobile.themes" name="android_vendor_tmobile_libs_com.tmobile.themes" remote="github" revision="jellybean" />
-  <project path="vendor/tmobile/providers/ThemeManager" name="android_vendor_tmobile_providers_ThemeManager" remote="github" revision="jellybean" />
-  <project path="vendor/tmobile/products/themes" name="android_vendor_tmobile_products_themes" remote="github" revision="jellybean" />
+  <project path="vendor/tmobile/apps/ThemeChooser" name="themes-platform-vendor-tmobile-apps-ThemeChooser" remote="afs" revision="jellybean" />
+  <project path="vendor/tmobile/libs/com.tmobile.themes" name="android_vendor_tmobile_libs_com.tmobile.themes" remote="afs" revision="jellybean" />
+  <project path="vendor/tmobile/providers/ThemeManager" name="android_vendor_tmobile_providers_ThemeManager" remote="afs" revision="jellybean" />
+  <project path="vendor/tmobile/products/themes" name="android_vendor_tmobile_products_themes" remote="afs" revision="jellybean" />
 </manifest>

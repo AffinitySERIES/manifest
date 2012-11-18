@@ -35,14 +35,49 @@ Your Done!!
 Initializing a Build Environment
 --------------------------
 
-Installing the JDK
-The Sun JDK is no longer in Ubuntu's main package repository. In order to download it, you need to add the appropriate repository and indicate to the system which JDK should be used.
-
+Install Oracle Java JDK, which is no longer in Ubuntu's main package repository. In order to download it, you need to add the appropriate repository and indicate to the system which JDK should be used.
 
     sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
     sudo apt-get update
     sudo apt-get install sun-java6-jdk
     
+OR manually install the Oracle Java SDK by downloading Java SE 6 Update 37 JDK (64 bit version!) [from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html). These instructions are only for Ubuntu 12.04 and distributions based on it (Mint 13, etc.), but might work on newer versions as well.
+
+Make the bin file executable:
+
+        chmod +x jdk-6u37-linux-x64.bin
+
+Extract the bin file:
+
+        ./jdk-6u37-linux-x64.bin
+
+Move the extracted folder to the correct location:
+
+        sudo mv jdk1.6.0_37 /usr/lib/jvm/
+      
+Install new Java source in your system:
+
+        sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.6.0_37/bin/javac 1
+        sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.6.0_37/bin/java 1
+        sudo update-alternatives --install /usr/bin/javaws javaws /usr/lib/jvm/jdk1.6.0_37/bin/javaws 1
+
+Choose default java (if prompted to enter a number, choose the number corresponding to your new install path, NOT OpenJDK or you will have problems later):
+
+        sudo update-alternatives --config javac
+        sudo update-alternatives --config java
+        sudo update-alternatives --config javaws
+        
+Test to ensure you are running the correct java
+
+        java -version
+        
+Verify the symlinks all point to new java location
+
+        ls -la /etc/alternatives/java*
+        
+Enable Java plugin for Mozilla Firefox (even for Chrome)
+
+        sudo ln -s /usr/lib/jvm/jdk1.6.0_37/jre/lib/amd64/libnpjp2.so /usr/lib/mozilla/plugins
     
 Installing required packages
 

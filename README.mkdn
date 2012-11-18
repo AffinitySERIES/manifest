@@ -1,6 +1,6 @@
-Android Developer Alliance
+Android Developer Alliance: AffinitySERIES ROM
 ===========
-To get started with Android Developer Alliance Roms, you'll need to get
+To get started with AffinitySERIES ROM, you'll need to get
 familiar with [Git and Repo](http://source.android.com/source/version-control.html).
 
 Register an account on our Gerrit
@@ -61,7 +61,7 @@ On Ubuntu 10.10:
 
     sudo ln -s /usr/lib32/mesa/libGL.so.1 /usr/lib32/mesa/libGL.so
     
-On Ubuntu 11.10:
+On Ubuntu 11.10/12.04:
 
 
     sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
@@ -75,7 +75,7 @@ To create them run:
 
     mkdir -p ~/bin 
 
-    mkdir -p ~/ada
+    mkdir -p ~/afs
 
 
 Install the Repository
@@ -92,7 +92,7 @@ You may need to reboot for these changes to take effect.
 
 Now enter the following to initialize the repository:
 
-    cd ~/ada
+    cd ~/afs
 
 Repositories:
 ---------------
@@ -101,7 +101,7 @@ Before you continue --> run this in the terminal
 
 	git config --global review.review.androiddeveloperalliance.org.username <gerrit username>
 
-    repo init -u git://github.com/AndroidDeveloperAlliance/manifest.git -b jb
+    repo init -u git://github.com/AffinitySERIES/manifest.git -b jb
 
     repo sync
 
@@ -124,12 +124,12 @@ Enter the number of the build you want to start and press enter
 Build the Code:
 
 
-    make ada
+    make afs
 
 
 Submitting Patches
 ------------------
-Patches are always welcome!  Please submit your patches via AndroidDeveloperAlliance Gerrit!
+Patches are always welcome!  Please submit your patches via Android Developer Alliance Gerrit!
 You can do this by using these commands:
 
     (From root android directory)
@@ -145,4 +145,4 @@ Commit your patches in a single commit. Squash multiple commit using this comman
 To view the status of your and others' patches, visit [AndroidDeveloperAlliance Code Review](http://review.androiddeveloperalliance.org/)
 
 
-If you have any issues please contact blueharford through rootzwiki.com PM or #AndroidDeveloperAlliance irc on freenode
+If you have any issues please contact msrfx through rootzwiki.com PM or #AndroidDeveloperAlliance irc on freenode

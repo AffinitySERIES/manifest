@@ -11,7 +11,7 @@
   <remote  name="omapzoom"
            fetch="git://git.omapzoom.org/" />
 		   
-  <default revision="jb-mr1-release"
+  <default revision="jb-mr0-release"
            remote="aosp"
            sync-j="7" />
 

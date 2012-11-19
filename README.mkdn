@@ -127,7 +127,7 @@ You may need to reboot for these changes to take effect.
 
 Now enter the following to initialize the repository:
 
-    cd ~/afs
+    cd ~/ada
 
 Repositories:
 ---------------
@@ -159,7 +159,7 @@ Enter the number of the build you want to start and press enter
 Build the Code:
 
 
-    make afs
+    make ada
 
 
 Submitting Patches
